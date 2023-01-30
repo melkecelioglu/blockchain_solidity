@@ -61,11 +61,28 @@ contract Register is Owner {
    
 }
 
-/* Exercise Time :) : 
- 1. create a function modifier called costs for our register function that checks to see 
- that the senders value (hint look up msg.value) requires to be greater than or equal 
- to the price. Second hint: The function modifier should take an argument 
- 
- 
+contract MyContract{
 
-*/
+    uint value;
+    //view eklemediğin sürece getvalue dan çıktı alamazsın göremezsin 
+    function getValue() external view returns(uint){
+        reurn value;
+    }
+
+    fucntion getNewValue() external pure returns(uint){
+        return 3+3;
+    }
+
+    function setValue(uint _value)  external{
+        value = _value;
+    }
+
+    function multiply() external pure returns(uint){
+        return 3 * 7;
+    }
+    function valuePlusThree() external returns(uint){
+        return value + 3 ;
+    }
+
+
+}
